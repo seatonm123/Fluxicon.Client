@@ -1,0 +1,27 @@
+  <form class="form login-hold" ng-show="$ctrl.showForm">
+      <div class="input-group-sm">
+        <input name="un-sign-up" placeholder="Enter User Name" ng-model="$ctrl.newUser.signupUsername"/>
+        <input name="su-email" placeholder="Enter Email" ng-model="$ctrl.newUser.signupEmail"/>
+        <input name="su-password" placeholder="Enter Password" ng-model="$ctrl.newUser.signupPassword"/>
+        <select name="preferred-foreign-language" placeholder="Foreign Language of Choice" ng-model="$ctrl.newUser.foreignLang">
+          <option>French</option>
+          <option>Spanish</option>
+          <option>German</option>
+          <option>Latin</option>
+          <option>Italian</option>
+        </select>
+        <button class="btn btn-secondary" ng-model="submitSignup" ng-click="$ctrl.signupSubmit()">Submit</button>
+      </div>
+  </form>
+  <form class="form login-hold" ng-show="$ctrl.showLogin">
+      <div class="input-group-sm">
+        <input name="li-user-name" placeholder="User Name" ng-model="$ctrl.loginUsername"/>
+        <input name="li-password" placeholder="Password" ng-attr-type="{{ showPassword ? 'text' : 'password' }}" ng-model="$ctrl.loginPassword"/>
+        <button class="btn btn-secondary" ng-model="submitLogin" ng-click="$ctrl.loginSubmit()">Submit</button>
+      </div>
+  </form>
+
+<div ng-show="$ctrl.showLoginSignup" class="login-buttons">
+  <button class="btn btn-lg btn-warning" ng-click="$ctrl.showSignup()">Sign Up</button>
+  <button class="btn btn-lg btn-info" ng-click="$ctrl.loginShow()">Log In</button>
+</div>

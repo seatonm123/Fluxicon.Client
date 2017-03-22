@@ -1,0 +1,76 @@
+<form class="form" id="setup-form" ng-show="$ctrl.showSetup">
+  <label for="langSelect">Select the Language in Which You'd Like to Train.</label>
+  <select class="list-group choose-stuff" name="langSelect" ng-model="$ctrl.language">
+    <option name="french">French</option>
+    <option name="spanish">Spanish</option>
+    <option name="german">German</option>
+    <option name="latin">Latin</option>
+    <option name="italian">Italian</option>
+  </select>
+  <label for="diffSelect">Select Training Difficulty</label>
+  <select class="list-group choose-stuff" name="diffSelect" ng-model="$ctrl.difficulty">
+    <option name="very-easy">Very Easy</option>
+    <option name="easy">Easy</option>
+    <option name="normal">Normal</option>
+    <option name="hard">Hard</option>
+    <option name="very-hard">Very Hard</option>
+  </select>
+  <button class="btn btn-info" ng-click="$ctrl.startFlux()">Start</button>
+</form>
+
+<div class="big flux">
+  <div class="container" id="flux-window" ng-show="$ctrl.showFlux">
+    <h2>Translate</h2>
+    <div class="trans-bubble">
+      <p class="translated">{{$ctrl.activePhrase}}</p>
+    </div>
+      <div class="from-div">
+        <h3 class="from-text">From {{$ctrl.language}}</h3>
+      </div>
+
+    <form class="form pager" id="training-form">
+      <div class="form group">
+        <label for="guess">Take a guess</label>
+        <input ng-model="$ctrl.yourGuess" type="text" class="form-control" id="guess" placeholder="Your guess here"/>
+      </div>
+      <button ng-click="$ctrl.makeGuess()" class="btn btn-default" ng-disabled="$ctrl.noAnswer">Guess</button>
+      <button ng-click="$ctrl.getHint()" class="btn btn-info" ng-disabled="$ctrl.hadThree">Get a hint!</button>
+      <div class="list-group-item">
+        <li class="list-group-item">
+          {{$ctrl.yourScore}}
+        </li>
+      </div>
+  </form>
+  </div>
+<div class="hinty" ng-show="$ctrl.hintActivated">
+  <h2>Hint: <br />{{$ctrl.thisHint}}</h2>
+</div>
+
+<div class="alert alert-success pager" role="alert" ng-show="$ctrl.showResults">
+  <h2>You were {{$ctrl.rightWrong}}</h2>
+  <p>Current Score: {{$ctrl.totalPoints}} / {{$ctrl.counter}}</p>
+  <ul class="btn-group">
+    <li class="list-group-item alert alert-danger" ng-show="$ctrl.rightAnswer" id="rightAnswer">ANSWER : {{$ctrl.myPhrase}}</li>
+    <li class="list-group-item alert alert-danger wrongAnswer" ng-show="$ctrl.wrongAnswer">ANSWER : {{$ctrl.myPhrase}}</li>
+  </ul>
+  <button class="btn btn-warning" ng-click="$ctrl.nextPhrase()">Next</button>
+</div>
+
+<div class="alert alert-info pager" role="alert" ng-show="$ctrl.showFinal">
+  <h2>Training Over!!!</h2>
+  <p>Your Scored {{$ctrl.totalPoints}} Out of {{$ctrl.counter}} Points!</p>
+  <ul>
+    <li>
+      You know your {{$ctrl.language}} {{$ctrl.mastery}}.
+    </li>
+    <button class="btn btn-warning-outline" ng-click="$ctrl.submitScore()">Submit Score</button>
+    <button class="btn btn-info-outline" ui-sref="home">Home</button>
+  </ul>
+  <button class="btn btn-warning" ng-click="$ctrl.nextPhrase()">Next</button>
+</div>
+</div>
+<div class="progress pager" ng-show="$ctrl.showProgress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$ctrl.finalLength}}%">
+    <span class="sr-only"></span>
+  </div>
+</div>

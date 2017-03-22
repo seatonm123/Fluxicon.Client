@@ -1,0 +1,17 @@
+<h1 id="this-one">Your Progress</h1>
+
+<h3 class="pager list-group">
+  <li class="list-group-item"id="french-label">French: {{$ctrl.frenchAverage}}%</li>
+  <li class="list-group-item"id="spanish-label"> Spanish: {{$ctrl.spanishAverage}}%</li>
+  <li class="list-group-item"id="german-label">German: {{$ctrl.germanAverage}}%</li>
+  <li class="list-group-item"id="latin-label">Latin: {{$ctrl.latinAverage}}%</li>
+  <li class="list-group-item"id="italian-label">Italian: {{$ctrl.italianAverage}}%</li>
+  <br />
+  <br />
+  <button class="btn btn-info" ng-click='$ctrl.arcShow()'>Overall</button>
+  <button class="btn btn-warning" ng-click="$ctrl.lineShow()">Comaprative</button>
+  <button class="btn btn-danger" ui-sref="home">Home</button>
+</h3>
+
+<div class="container" id="outer-container" ng-show="$ctrl.showArc"></div>
+<div class="container" id="second-container" ng-show="$ctrl.showLine"></div>

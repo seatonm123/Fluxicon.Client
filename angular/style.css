@@ -1,0 +1,296 @@
+body{
+  background-image: url('bookbackground.jpg');
+  position: absolute;
+  top: 0px;
+  /*background-position: center;*/
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+.wrongAnswer{
+  color: red;
+  font-weight: bolder;
+}
+
+.btn-group{
+  padding: 1%;
+}
+
+#start-flux{
+  width: 40vw;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.col-md-3{
+  width: 20vw;
+  padding: 3vw;
+}
+
+#thatLanguage {
+  color: blue;
+}
+
+#rightAnswer {
+  color: blue;
+  font-weight: bolder;
+}
+
+#french-label{
+  color: yellow;
+  text-shadow: 1px 1px 1px black;
+}
+
+#spanish-label{
+  color: green;
+  text-shadow: 1px 1px 1px black;
+}
+
+#german-label{
+  color: blue;
+  text-shadow: 1px 1px 1px black;
+}
+
+#latin-label{
+  color: purple;
+  text-shadow: 1px 1px 1px black;
+}
+
+#italian-label{
+  color: red;
+  text-shadow: 1px 1px 1px black;
+}
+
+#this-header{
+  background-color: rgba(255,70,0, 0.7);
+  width: 100vw;
+  height: 8em;
+}
+
+.login-hold{
+  width: 60vw;
+  height: 10vh;
+  padding-left: 1em;
+  padding-top: 1em;
+  align-self: center;
+  margin-left: 10em;
+  margin-top: 5em;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button{
+  opacity: 0.8;
+  height: 10vh;
+  width: 10vw;
+  text-align: center;
+}
+
+.btn-secondary{
+  opacity: 1;
+  height: 6vh;
+  width: 8vw;
+}
+
+.login-buttons{
+  align-self: center;
+  margin-top: 11em;
+  margin-left: 27em;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 20vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+  padding-top: 2.1em;
+  /*padding-top: 2em;*/
+
+}
+
+#home-buttons{
+  width: 50vw;
+  margin-left: 15em;
+}
+
+#setup-form{
+  margin-left: 25.5em;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 22em;
+  width: 20em;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+#flux-panel{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+
+#answer-form{
+  background-color: white;
+  width: 40%;
+  display: flex;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 4px black;
+}
+
+#guess-content{
+  width: 20em;
+}
+
+#score-content{
+  height: 70vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3em;
+  background-color: rgba(0,128,0, 0.8);
+}
+
+#wrong-content{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  max-width: 80%;
+  width: auto;
+  height: auto;
+}
+
+.wrongAnswer{
+  width: 6em;
+  height: 2.5em;
+  margin: 1%;
+}
+
+.big-flux{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  left: 0px;
+}
+
+#right-side{
+  width: 20vw;
+
+}
+
+.your-score{
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.1em;
+  font-weight: bold;
+}
+
+.choose-stuff{
+  font-size: 2em;
+}
+
+#flux-window{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 20em;
+  width: 70em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10%;
+  box-shadow: inset 0 0 5px black;
+}
+
+.hinty{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  width: 15em;
+  height: 15em;
+  background-color: rgba(0, 0, 102, 0.8);
+  box-shadow: inset 0 0 5px black;
+  position: absolute;
+  top: 11em;
+  right: 5em;
+}
+
+.hinty h2{
+  color: white;
+  font-size: 2em;
+}
+
+#training-head{
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+#training-title{
+  color: white;
+}
+
+.trans-bubble{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(blue, black);
+  box-shadow: inset 0 0 12px black;
+}
+
+.translated{
+  font-size: 2em;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.from-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  height: 6em;
+  width: 10em;
+  box-shadow: inset 0 0 12px black;
+  text-align: center;
+}
+
+.from-text{
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
