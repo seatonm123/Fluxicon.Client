@@ -36,8 +36,8 @@
 
 <div class="container" ng-show="$ctrl.showFlux" id="flux-panel">
     <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{$ctrl.language}}
+        <div class="panel-heading" id="lang-heading">
+            <h3 class="panel-title" id="lang-title">{{$ctrl.language}}
                 on
                 {{$ctrl.difficulty}}</h3>
         </div>
@@ -54,17 +54,11 @@
     </form>
 </div>
 
-<div class="progress pager" ng-show="$ctrl.showProgress">
-    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$ctrl.finalLength}}%">
-        <span class="sr-only"></span>
-    </div>
-</div>
-
 <div class="alert alert-success pager" role="alert" ng-show="$ctrl.showScore" id="score-content">
   <div>
     <p class="your-score">{{$ctrl.yourScore}}</p>
   </div>
-    <p>Check these words:</p>
+    <p ng-show="$ctrl.isWrongAnswer">Check these words:</p>
     <ul class="btn-group" id="wrong-content">
         <li class="list-group-item alert alert-danger wrongAnswer" ng-repeat="answer in $ctrl.wrongArray track by $index">{{answer}}</li>
     </ul>
@@ -80,6 +74,11 @@
 
     </div>
 
+    <div class="progress pager" ng-show="$ctrl.showProgress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{$ctrl.finalLength}}%">
+            <span class="sr-only"></span>
+        </div>
+    </div>
 
     <div class="alert alert-info pager" role="alert" ng-show="$ctrl.endItAll">
         <h2>The results Are in!</h2>
@@ -91,9 +90,9 @@
             <span id="thatLanguage">{{$ctrl.language}}</span>
             {{$ctrl.mastery}}!</h4>
         <button class="btn btn-warning" ng-click="$ctrl.postProgress()">Post Results</button>
-        <button class="btn btn-warning-outline" ui-sref="home">Home</button>
+        <button class="btn btn-info" ui-sref="home">Home</button>
         <div class="progress pager">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                 <span class="sr-only">60% Complete (warning)</span>
             </div>
         </div>

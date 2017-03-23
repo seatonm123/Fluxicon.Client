@@ -163,12 +163,19 @@
       }
     }
     finalScore = Math.ceil((score/noSpaceAnswer.length) * toGuess.points);
-    vm.yourScore = "'" + guessContent + "' : " + toGuess.author;
+      if(toGuess.author !== null){
+      vm.yourScore = "'" + guessContent + "' : " + toGuess.author;
+    } else {
+      vm.yourScore = "'" + guessContent + "'"
+    }
     vm.thisScore = finalScore;
     vm.currentScore += finalScore;
     vm.showScore = true;
     vm.noAnswer = true;
     vm.showFlux = false;
+    if(wrongArray.length > 0){
+      vm.isWrongAnswer = true;
+    }
   };
 
   vm.nextPhrase = function(){
@@ -183,6 +190,7 @@
     vm.noAnswer = false;
     vm.finalLength = 100 - ((vm.thisLength / vm.initialLength) * 100);
     vm.displayGuess = true;
+    vm.isWrongAnswer = false;
     } else {
       isFinal();
     }

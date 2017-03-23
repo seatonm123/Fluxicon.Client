@@ -38,15 +38,15 @@
           let thisDiff = vm.difficulty.toString().trim();
           let queryString = '';
           if(thisDiff == 'Very Easy'){
-            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=3&maxLength=4&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=3&maxLength=4&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Easy'){
-            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=4&maxLength=6&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=4&maxLength=6&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Normal'){
-            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=6&maxLength=8&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=6&maxLength=8&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Hard'){
-            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=8&maxLength=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=8&maxLength=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Very Hard'){
-            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=10&maxLength=20&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=10&maxLength=20&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           }
           $http.get(queryString).then(function(response){
              vm.myPhrase = response.data.word;

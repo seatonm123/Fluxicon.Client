@@ -10,8 +10,16 @@ body{
   align-items: center;
 }
 
+main{
+  font-family: helvetica;
+}
+
 nav a {
   color: white;
+}
+
+.btn-info{
+  background-color: rgba(0, 20, 200, 0.8);
 }
 
 h1{
@@ -39,7 +47,9 @@ h1{
 }
 
 #thatLanguage {
-  color: blue;
+  color: orange;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 1px black;
 }
 
 #rightAnswer {
@@ -50,32 +60,41 @@ h1{
 #french-label{
   color: yellow;
   text-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 #spanish-label{
   color: green;
   text-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 #german-label{
   color: blue;
   text-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 #latin-label{
   color: purple;
   text-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 #italian-label{
   color: red;
   text-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 #this-header{
-  background-color: rgba(255,70,0, 0.7);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255,70,0, 0.8);
   width: 100vw;
-  height: 8em;
+  height: 8.5em;
 }
 
 .login-hold{
@@ -86,10 +105,12 @@ h1{
   align-self: center;
   margin-left: 10em;
   margin-top: 5em;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: 3px solid white;
+  border-radius: 3%;
 }
 
 button{
@@ -97,6 +118,12 @@ button{
   height: 10vh;
   width: 10vw;
   text-align: center;
+  color: white;
+  box-shadow: inset 0 0 5px black;
+}
+
+.btn-warning{
+  border: 1px solid white;
 }
 
 .btn-secondary{
@@ -105,11 +132,12 @@ button{
   width: 8vw;
 }
 
+
 .login-buttons{
   align-self: center;
   margin-top: 11em;
   margin-left: 27em;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.9);
   width: 20vw;
   height: 20vh;
   display: flex;
@@ -117,13 +145,16 @@ button{
   justify-content: space-between;
   padding: 1em;
   padding-top: 2.1em;
+  border: 3px solid white;
+  border-radius: 3%;
   /*padding-top: 2em;*/
 
 }
 
 #home-buttons{
   width: 50vw;
-  margin-left: 15em;
+  margin-left: 14em;
+
 }
 
 #setup-form{
@@ -135,12 +166,14 @@ button{
   align-items: center;
   height: 22em;
   width: 20em;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
+  border: 3px solid white;
+  border-radius: 3%;
 }
 
 #flux-panel{
-
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -148,6 +181,8 @@ button{
   width: 100%;
   height: 100%;
   padding: 2em;
+  border: 3px solid white;
+  margin-top: 2%;
 }
 
 #answer-form{
@@ -160,6 +195,7 @@ button{
   align-items: center;
   text-align: center;
   box-shadow: inset 0 0 4px black;
+  border: 3px solid white;
 }
 
 #guess-content{
@@ -177,6 +213,30 @@ button{
   background-color: rgba(0,128,0, 0.8);
 }
 
+#score-content{
+  height: auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3em;
+  background-color: rgba(0,0,128, 0.8);
+}
+
+#score-content2{
+  height: 70vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3em;
+  background-color: rgba(0,200,100, 0.8);
+  border: 2px solid white;
+  box-shadow: 2px 2px 2px black;
+}
+
 #wrong-content{
   display: flex;
   flex-flow: wrap;
@@ -187,7 +247,21 @@ button{
 }
 
 .wrongAnswer{
-  width: 6em;
+  width: 10em;
+  height: 2.5em;
+  margin: 1%;
+}
+
+#rightAnswer{
+  width: 15em;
+  height: 2.5em;
+  margin: 1%;
+}
+
+#wrongAnswer{
+  color: red;
+  font-weight: bolder;
+  width: 15em;
   height: 2.5em;
   margin: 1%;
 }
@@ -207,11 +281,18 @@ button{
 
 }
 
+.alert-info{
+  background-color: rgba(0, 100, 300, 0.8)
+}
+
 .your-score{
   color: black;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.1em;
+  text-shadow: 1px 1px 1px grey;
+  background-color: rgba(230, 230, 230, 0.7);
+  padding: 1em;
   font-weight: bold;
+  border: 2px solid white;
+  border-radius: 20%;
 }
 
 .choose-stuff{
@@ -229,6 +310,7 @@ button{
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10%;
   box-shadow: inset 0 0 5px black;
+  border: 3px solid white;
 }
 
 .hinty{
@@ -240,12 +322,15 @@ button{
   border-radius: 50%;
   width: 15em;
   height: 15em;
-  background-color: rgba(0, 0, 102, 0.8);
+  background: -webkit-radial-gradient(red, black);
   box-shadow: inset 0 0 5px black;
   position: absolute;
-  top: 11em;
-  right: 5em;
+  top: 28em;
+  right: 33em;
+  border: 2px solid white;
 }
+
+
 
 .hinty h2{
   color: white;
@@ -293,4 +378,93 @@ button{
 .from-text{
   color: white;
   text-shadow: 2px 2px 2px black;
+}
+
+#answer-group{
+  width: 15em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#second-answer-group{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.this-ref{
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*border-radius: 10%;*/
+  background: -webkit-linear-gradient(rgba(300, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+  width: 11em;
+  text-align: center;
+}
+
+.this-ref:hover{
+  background-color: white;
+}
+
+#quick{
+  border-right: 2px solid white;
+}
+
+.this-ref a{
+  color: black;
+  font-size: 1.4em;
+  text-shadow: 0.5px 0.5px 0.5px red;
+}
+
+.pres-hold{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  box-shadow: 4px 4px 4px black;
+}
+
+#logo{
+  margin-top: 3%;
+  font-family: hipstelvetica;
+  font-size: 6em;
+  margin-left: 6em;
+  text-shadow: 3px 3px 1px black;
+}
+
+#outer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 50em;
+  height: 35em;
+  padding-right: 2em;
+}
+
+#second-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 50em;
+  height: 35em;
+  padding-right: 2em;
+}
+
+#lang-heading{
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+#lang-title{
+  color: white;
+  text-shadow: 1px 1px 1px black;
 }

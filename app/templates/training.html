@@ -35,23 +35,18 @@
       </div>
       <button ng-click="$ctrl.makeGuess()" class="btn btn-default" ng-disabled="$ctrl.noAnswer">Guess</button>
       <button ng-click="$ctrl.getHint()" class="btn btn-info" ng-disabled="$ctrl.hadThree">Get a hint!</button>
-      <div class="list-group-item">
-        <li class="list-group-item">
-          {{$ctrl.yourScore}}
-        </li>
-      </div>
   </form>
   </div>
-<div class="hinty" ng-show="$ctrl.hintActivated">
+<div class="hinty flicker-in-1" ng-show="$ctrl.hintActivated">
   <h2>Hint: <br />{{$ctrl.thisHint}}</h2>
 </div>
 
-<div class="alert alert-success pager" role="alert" ng-show="$ctrl.showResults">
+<div class="alert alert-success pager" id="score-content2" role="alert" ng-show="$ctrl.showResults">
   <h2>You were {{$ctrl.rightWrong}}</h2>
   <p>Current Score: {{$ctrl.totalPoints}} / {{$ctrl.counter}}</p>
-  <ul class="btn-group">
+  <ul class="btn-group" id="second-answer-group">
     <li class="list-group-item alert alert-danger" ng-show="$ctrl.rightAnswer" id="rightAnswer">ANSWER : {{$ctrl.myPhrase}}</li>
-    <li class="list-group-item alert alert-danger wrongAnswer" ng-show="$ctrl.wrongAnswer">ANSWER : {{$ctrl.myPhrase}}</li>
+    <li class="list-group-item alert alert-danger" ng-show="$ctrl.wrongAnswer" id="wrongAnswer">ANSWER : {{$ctrl.myPhrase}}</li>
   </ul>
   <button class="btn btn-warning" ng-click="$ctrl.nextPhrase()">Next</button>
 </div>
@@ -64,7 +59,7 @@
       You know your {{$ctrl.language}} {{$ctrl.mastery}}.
     </li>
     <button class="btn btn-warning-outline" ng-click="$ctrl.submitScore()">Submit Score</button>
-    <button class="btn btn-info-outline" ui-sref="home">Home</button>
+    <button class="btn btn-danger" ui-sref="home">Home</button>
   </ul>
   <button class="btn btn-warning" ng-click="$ctrl.nextPhrase()">Next</button>
 </div>
