@@ -18,7 +18,7 @@
         var latinArray = [];
         var italianArray = [];
 
-        $http.get('http://localhost:2500/progress/' + localStorage.getItem('currentUser'))
+        $http.get('https://fluxicon.herokuapp.com/progress/' + localStorage.getItem('currentUser'))
           .then(function(response){
             for(var i = 0; i < response.data.length; i++){
               if(response.data[i].language == "French"){
@@ -75,7 +75,7 @@
         var langArray = ['French', 'Spanish', 'German', 'Latin', 'Italian'];
 
 
-        d3.json('http://localhost:2500/progress/' + localStorage.getItem('currentUser'), function(data){
+        d3.json('https://fluxicon.herokuapp.com/progress/' + localStorage.getItem('currentUser'), function(data){
           var frenchArray = [];
           var frenchPercentages = [];
           var spanishArray = [];

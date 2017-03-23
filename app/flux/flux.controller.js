@@ -65,7 +65,7 @@
     }
 
     function getPhraseArray(){
-      $http.get('http://localhost:2500/phrases')
+      $http.get('https://fluxicon.herokuapp.com/phrases')
         .then(function(response){
           for(var i = 0; i < response.data.length; i++){
             phraseArray.push(response.data[i]);
@@ -221,7 +221,7 @@
   function toPost(){
     var thisGame = {
       method: 'POST',
-      url: 'http://localhost:2500/games',
+      url: 'https://fluxicon.herokuapp.com/games',
       data: {
         language: vm.language.toString().trim(),
         points_to_win: vm.optimalScore,
@@ -241,7 +241,7 @@
 
       var progressPost = {
         method: 'POST',
-        url: 'http://localhost:2500/progress',
+        url: 'https://fluxicon.herokuapp.com/progress',
         data: {
           user_id: localStorage.getItem('currentUser'),
           language: vm.language.toString().trim(),

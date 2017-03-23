@@ -30,7 +30,7 @@
       vm.signupSubmit = function(newUser){
         var signUser = {
           method: 'POST',
-          url: 'http://localhost:2500/users',
+          url: 'https://fluxicon.herokuapp.com/users',
           data: {user_name: vm.newUser.signupUsername,
                  email: vm.newUser.signupEmail,
                  password: vm.newUser.signupPassword,
@@ -48,7 +48,7 @@
 
       vm.loginSubmit = function(){
         console.log(vm.loginUsername);
-        $http.get('http://localhost:2500/users/' + vm.loginUsername)
+        $http.get('https://fluxicon.herokuapp.com/users/' + vm.loginUsername)
           .then(function(response){
             if(vm.loginPassword == response.data[0].password){
             localStorage.setItem('currentUser', response.data[0].id);

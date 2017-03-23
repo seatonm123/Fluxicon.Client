@@ -38,15 +38,15 @@
           let thisDiff = vm.difficulty.toString().trim();
           let queryString = '';
           if(thisDiff == 'Very Easy'){
-            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=3&maxLength=4&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=3&maxLength=4&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Easy'){
-            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=4&maxLength=6&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=4&maxLength=6&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Normal'){
-            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=6&maxLength=8&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=6&maxLength=8&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Hard'){
-            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=8&maxLength=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=8&maxLength=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           } else if(thisDiff == 'Very Hard'){
-            queryString = 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=10&maxLength=20&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+            queryString = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=100&maxCorpusCount=500&minDictionaryCount=7&maxDictionaryCount=20&minLength=10&maxLength=20&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
           }
           $http.get(queryString).then(function(response){
              vm.myPhrase = response.data.word;
@@ -190,7 +190,7 @@
       function toPost(){
         var thisGame = {
           method: 'POST',
-          url: 'http://localhost:2500/games',
+          url: 'https://fluxicon.herokuapp.com/games',
           data: {
             language: vm.language.toString().trim(),
             points_to_win: 7,
@@ -210,7 +210,7 @@
 
           var progressPost = {
             method: 'POST',
-            url: 'http://localhost:2500/progress',
+            url: 'https://fluxicon.herokuapp.com/progress',
             data: {
               user_id: localStorage.getItem('currentUser'),
               language: vm.language.toString().trim(),
